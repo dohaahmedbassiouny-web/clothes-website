@@ -7,22 +7,44 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: #f8fdfc;
+            background: linear-gradient(135deg, rgba(233, 233, 237, 0.61), #b8cfec);
             font-family: 'Cairo', sans-serif;
         }
+
+        .navbar {
+            background: rgba(16, 18, 19, 0.9);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffffff !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: #92a5da !important;
+        }
+
         .forgot-box {
-            max-width: 450px;
-            margin: 80px auto;
+            max-width: 420px;
+            margin: 100px auto;
             background: #fff;
             padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         .forgot-box h2 {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             font-weight: bold;
             color: #062557;
+        }
+        .forgot-box p {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
         }
         .form-control {
             padding: 12px;
@@ -30,17 +52,18 @@
             margin-bottom: 15px;
         }
         .btn-reset {
-            background: #f1c40f;
-            color: #222;
             font-weight: bold;
             padding: 12px;
             border-radius: 8px;
             width: 100%;
-            transition: 0.3s;
             border: none;
+            background: linear-gradient(90deg, #1a498e, #3b82f6);
+            color: white;
+            transition: 0.3s ease;
         }
         .btn-reset:hover {
-            background: #d4ac0d;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(26,73,142,0.4);
         }
         .back-link {
             margin-top: 15px;
@@ -58,17 +81,32 @@
 </head>
 <body>
 
+<!-- ✅ Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">VESTA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto"></ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ✅ Forgot Password Box -->
 <div class="forgot-box">
     <h2>Forgot Password</h2>
-    <p class="text-center">Enter your email or phone number to reset your password</p>
+    <p>Enter your email or phone number to reset your password</p>
     <form>
         <input type="text" class="form-control" placeholder="Enter your email or phone" required>
         <button type="submit" class="btn btn-reset">Reset Password</button>
     </form>
     <div class="back-link">
-        <p><a href="sign%20in.html">← Back to Sign In</a></p>
+        <p><a href="sign in.html">← Back to Sign In</a></p>
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
