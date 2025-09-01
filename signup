@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section id="pants" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">🧍‍♂️ pants</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card product-card">
+                    <img src="Tween%20Girls%20New%20Fashion%20Casual%20Light%20Wash%20Jeans%20With%20Bow%20Decor,%20Straight%20Wide%20Leg%20Design.jpg" class="card-img-top" alt="بنطلون">
+                    <div class="card-body text-center">
+                        <h5>بنطلون جينز</h5>
+                        <p class="fw-bold text-primary">1500 EGP</p>
+                        <button class="btn btn-outline-success">أضف إلى السلة</button>
+                    </div>
+                </div>
+            </div><div class="container py-5">
+
+            <div class="row g-4">
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="download (37).jpg" class="card-img-top img-fluid" alt="بنطلون جينز" />
+                        <div class="card-body">
+                            <h5 class="card-title">بنطلون جينز</h5>
+                            <p class="text-muted">جينز - مقاس 32</p>
+                            <p class="fw-bold text-primary">999 EGP <small class="text-decoration-line-through text-muted">1500 EGP</small></p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- باقي المنتجات -->
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="download (37).jpg" class="card-img-top img-fluid" alt="بنطلون جينز" />
+                        <div class="card-body">
+                            <h5 class="card-title">بنطلون جينز</h5>
+                            <p class="text-muted">جينز - مقاس 32</p>
+                            <p class="fw-bold text-primary">999 EGP
+                                <small class="text-decoration-line-through text-muted">1500 EGP</small>
+                            </p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="Hollister%20linen%20beige%20trouser.jpg" class="card-img-top img-fluid" alt="بنطلون قماش" />
+                        <div class="card-body">
+                            <h5 class="card-title">بنطلون قماش</h5>
+                            <p class="text-muted">قماش - لون بيج</p>
+                            <p class="fw-bold text-primary">850 EGP</p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="download (40).jpg" class="card-img-top img-fluid" alt="بنطلون رياضي" />
+                        <div class="card-body">
+                            <h5 class="card-title">بنطلون رياضي</h5>
+                            <p class="text-muted">قماش قطني - رمادي</p>
+                            <p class="fw-bold text-primary">650 EGP</p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="download (39).jpg" class="card-img-top img-fluid" alt="بنطلون كلاسيك" />
+                        <div class="card-body">
+                            <h5 class="card-title">بنطلون كلاسيك</h5>
+                            <p class="text-muted">رسمي - أسود</p>
+                            <p class="fw-bold text-primary">1200 EGP</p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="Women's%20High%20Waisted%20Waffle%20Shorts%20Casual%20Home%20Shorts%20Solid%20Color%20Hot%20Pants%20Summer%20Casual%20Homewear.jpg" class="card-img-top img-fluid" alt="شورت" />
+                        <div class="card-body">
+                            <h5 class="card-title">شورت صيفي</h5>
+                            <p class="text-muted">قطن - كاجوال</p>
+                            <p class="fw-bold text-primary">500 EGP</p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card shadow-sm">
+                        <img src="download (42).jpg" class="card-img-top img-fluid" alt="جيبه قماش" />
+                        <div class="card-body">
+                            <h5 class="card-title">جيبه قماش</h5>
+                            <p class="text-muted">قماش ابيض</p>
+                            <p class="fw-bold text-primary">1100 EGP</p>
+                            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- كرري باقي المنتجات -->
+        </div>
+    </div>
+</section>
+</body>
+</html>
