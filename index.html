@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> VESTA  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .section-title {
+      width: 100%;              /* تاخد عرض الشاشة كله */
+      min-height: 100vh;        /* تاخد طول الشاشة */
+      display: flex;            /* علشان نوسّط المحتوى */
+      align-items: center;      /* عمودي في النص */
+      justify-content: center;  /* أفقي في النص */
+      text-align: center;
+      background-color: rgba(186, 186, 189, 0.61); /* لون خلفية مبدئي */
+      color: #333;              /* لون النص */
+      font-size: 3rem;          /* حجم كبير للعنوان */
+      font-weight: bold;
+    }.section-title.sports-title {
+       background: url("لقطة شاشة 2025-09-01 163123.png") no-repeat center center; /* NEW */
+       background-size: cover; /* NEW - تغطي المساحة كاملة */
+       color: white; /* NEW - النص يظهر بوضوح */
+       padding: 80px 20px; /* NEW - مساحة داخلية */
+       border-radius: 10px; /* NEW - زوايا ناعمة */
+     }
+    .section-title.shirt-title {
+
+  background: url("لقطة شاشة 2025-09-01 165732.png") no-repeat center center; /* NEW */
+  background-size: cover; /* NEW - تغطي المساحة كاملة */
+  color: rgb(6, 37, 87); /* NEW - النص يظهر بوضوح */
+  padding: 70px 20px; /* NEW - مساحة داخلية */
+  border-radius: 15px; /* NEW - زوايا ناعمة */
+}
+   .section-title.pants{
+     background: url("80.png") no-repeat center center; /* NEW */
+     background-size: cover; /* NEW - تغطي المساحة كاملة */
+     color: white; /* NEW - النص يظهر بوضوح */
+     padding: 80px 20px; /* NEW - مساحة داخلية */
+     border-radius: 10px; /* NEW - زوايا ناعمة */
+    }
+
+    #shirts .product-card img {
+      width: 100%;
+      height: 300px;        /* نفس ارتفاع باقي الصور */
+      object-fit: contain;  /* يخلي الصورة كاملة باينة بدون قص */
+      background: #f9f9f9;  /* خلفية فاتحة خلف الصور */
+      padding: 8px;         /* مسافة حوالين الصورة */
+      border-bottom: 1px solid #eee; /* خط فاصل تحت الصورة */
+    }
+
+
+
+    body {
+      font-family: 'Poppins', sans-serif; /* NEW */
+      background: #f0f6fa; /* NEW */
+      color: #222;
+    }
+    .navbar {
+      background: rgba(10, 61, 98, 0.9); /* NEW */
+      transition: 0.4s; /* NEW */
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: #00c6ff !important; /* NEW */
+      font-size: 1.5rem; /* NEW */
+    }
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+    }
+    .nav-link:hover {
+      color: #92a5da !important; /* NEW */
+    }
+    .hero {
+      background: url("banner.jpg") center/cover no-repeat; /* NEW */
+      height: 90vh; /* NEW */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::after { /* NEW */
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content { /* NEW */
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 { font-size: 3rem; font-weight: 700; }
+    .hero .btn {
+      margin-top: 20px;
+      background: #f1c40f;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    .section-title {margin-bottom:100px; font-weight:bold; text-align:center;}
+    .product-card {
+      transition: 0.3s;
+      border: none; /* NEW */
+      border-radius: 12px; /* NEW */
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* NEW */
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* NEW */
+    }
+    .product-card img {
+      width: 100%;
+      height: 300px;         /* كل الصور نفس الارتفاع */
+      object-fit: contain;   /* يخلي الصورة كاملة باينة */
+      background: rgba(220, 219, 219, 0.97);      /* الخلفية تبان ورا الصور */
+      padding: 8px;         /* مسافة بسيطة حوالين الصورة */
+      border-bottom: 1px solid #eee; /* خط بسيط تحت الصورة للفصل */
+    }
+
+    footer {
+      background: #1b2a49; /* NEW */
+      color: white;
+      padding: 20px 0;
+    }
+    footer a { color: #f1c40f; margin: 0 10px; } /* NEW */
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">   VESTA   </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pants">jeans</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shirts">T-Shirt</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sports">sport Wears</a></li>
+        <li class="nav-item"><a class="nav-link" href="#offers">offers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#hijab">Hijab</a></li>
+        <li class="nav-item"><a class="nav-link" href="sign in.html">Sign in</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shoes">shoes & bag </a></li>
+        <li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+
+
+      </ul>
+      <a href="#" class="cart-icon text-white"><i class="fas fa-shopping-cart fs-4"></i></a>
+    </div>
+  </div>
+</nav>
+
+<section id="home" class="py-5 text-center">
+  <div class="container">
+    <h1 class="fw-bold mb-4">Welcome to VESTA</h1>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="13.jpg" alt="Product 1" class="img-fluid rounded">
+      </div>
+      <div class="col-md-4">
+        <img src="14.jpg" alt="Product 2" class="img-fluid rounded">
+      </div>
+      <div class="col-md-4">
+        <img src="15.jpg" alt="Product 3" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <img src="16.jpg" alt="Product 4" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <img src="18.jpg" alt="Product 5" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shoes" class="py-5 bg-light text-center">
+  <div class="container">
+    <h1 class="fw-bold mb-4">shoes & bag✨</h1>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="a%20(1).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Bag </h5>
+            <p class="text-muted">COACH New York</p>
+            <p class="fw-bold text-primary">2000 EGP
+              <small class="text-decoration-line-through text-muted">2500 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="a%20(3).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Bag</h5>
+            <p class="text-muted">Zara</p>
+            <p class="fw-bold text-primary">1500 EGP
+              <small class="text-decoration-line-through text-muted">3000 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="a%20(9).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Bag </h5>
+            <p class="text-muted">dior</p>
+            <p class="fw-bold text-primary">5900 EGP
+              <small class="text-decoration-line-through text-muted">7900 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="b%20(4).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Bag </h5>
+            <p class="text-muted">nike</p>
+            <p class="fw-bold text-primary">4500 EGP
+              <small class="text-decoration-line-through text-muted">6900 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="a%20(4).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Bag </h5>
+            <p class="text-muted">waterproof bag</p>
+            <p class="fw-bold text-primary">999 EGP
+              <small class="text-decoration-line-through text-muted">1500EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="DQ0284-104-PHCTH001.webp" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">shoes </h5>
+            <p class="text-muted">Air Max SYSTM Lifestyle Shoes
+            </p>
+            <p class="fw-bold text-primary">4499 EGP
+              <small class="text-decoration-line-through text-muted">8999 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="a%20(6).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">shoes </h5>
+            <p class="text-muted">New Balance</p>
+            <p class="fw-bold text-primary">5599 EGP
+              <small class="text-decoration-line-through text-muted">7899 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="a%20(8).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">shoes </h5>
+            <p class="text-muted">samba</p>
+            <p class="fw-bold text-primary">7700 EGP
+              <small class="text-decoration-line-through text-muted">10000 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Home -->
+
+<section id="hijab" class="py-5 bg-light text-center">
+  <div class="container">
+    <h1 class="fw-bold mb-4">Hijab ✨</h1>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="9.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">copy EMMA</p>
+            <p class="fw-bold text-primary">150 EGP
+              <small class="text-decoration-line-through text-muted">200 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="5.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">copy EMMA</p>
+            <p class="fw-bold text-primary">150 EGP
+              <small class="text-decoration-line-through text-muted">200 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="6.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">copy EMMA</p>
+            <p class="fw-bold text-primary">150 EGP
+              <small class="text-decoration-line-through text-muted">200 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="7.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">copy EMMA</p>
+            <p class="fw-bold text-primary">150 EGP
+              <small class="text-decoration-line-through text-muted">200 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="3.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">حجاب سادة</p>
+            <p class="fw-bold text-primary">130 EGP
+              <small class="text-decoration-line-through text-muted">170 EGP</small>
+            </p><a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+            <a href="#" class="btn btn-outline-success">أضف إلى السلة</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="4.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">حجاب سادة</p>
+            <p class="fw-bold text-primary">130 EGP
+              <small class="text-decoration-line-through text-muted">170 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="10.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">حجاب سادة</p>
+            <p class="fw-bold text-primary">130 EGP
+              <small class="text-decoration-line-through text-muted">170 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="11.jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">حجاب </h5>
+            <p class="text-muted">حجاب سادة</p>
+            <p class="fw-bold text-primary">130 EGP
+              <small class="text-decoration-line-through text-muted">170 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Pants Section -->
+<section id="pants" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title.pants">🧍‍♂️ pants</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="Tween%20Girls%20New%20Fashion%20Casual%20Light%20Wash%20Jeans%20With%20Bow%20Decor,%20Straight%20Wide%20Leg%20Design.jpg" class="card-img-top" alt="بنطلون">
+          <div class="card-body text-center">
+            <h5>بنطلون جينز</h5>
+            <p class="fw-bold text-primary">1500 EGP</p>
+            <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+          </div>
+        </div>
+      </div><div class="container py-5">
+
+      <div class="row g-4">
+        <!-- Product Card -->
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="download (37).jpg" class="card-img-top img-fluid" alt="بنطلون جينز" />
+            <div class="card-body">
+              <h5 class="card-title">بنطلون جينز</h5>
+              <p class="text-muted">جينز - مقاس 32</p>
+              <p class="fw-bold text-primary">999 EGP <small class="text-decoration-line-through text-muted">1500 EGP</small></p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <!-- باقي المنتجات -->
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="download (37).jpg" class="card-img-top img-fluid" alt="بنطلون جينز" />
+            <div class="card-body">
+              <h5 class="card-title">بنطلون جينز</h5>
+              <p class="text-muted">جينز - مقاس 32</p>
+              <p class="fw-bold text-primary">999 EGP
+                <small class="text-decoration-line-through text-muted">1500 EGP</small>
+              </p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="Hollister%20linen%20beige%20trouser.jpg" class="card-img-top img-fluid" alt="بنطلون قماش" />
+            <div class="card-body">
+              <h5 class="card-title">بنطلون قماش</h5>
+              <p class="text-muted">قماش - لون بيج</p>
+              <p class="fw-bold text-primary">850 EGP</p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="download (40).jpg" class="card-img-top img-fluid" alt="بنطلون رياضي" />
+            <div class="card-body">
+              <h5 class="card-title">بنطلون رياضي</h5>
+              <p class="text-muted">قماش قطني - رمادي</p>
+              <p class="fw-bold text-primary">650 EGP</p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="download (39).jpg" class="card-img-top img-fluid" alt="بنطلون كلاسيك" />
+            <div class="card-body">
+              <h5 class="card-title">بنطلون كلاسيك</h5>
+              <p class="text-muted">رسمي - أسود</p>
+              <p class="fw-bold text-primary">1200 EGP</p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="Women's%20High%20Waisted%20Waffle%20Shorts%20Casual%20Home%20Shorts%20Solid%20Color%20Hot%20Pants%20Summer%20Casual%20Homewear.jpg" class="card-img-top img-fluid" alt="شورت" />
+            <div class="card-body">
+              <h5 class="card-title">شورت صيفي</h5>
+              <p class="text-muted">قطن - كاجوال</p>
+              <p class="fw-bold text-primary">500 EGP</p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <img src="download (42).jpg" class="card-img-top img-fluid" alt="جيبه قماش" />
+            <div class="card-body">
+              <h5 class="card-title">جيبه قماش</h5>
+              <p class="text-muted">قماش ابيض</p>
+              <p class="fw-bold text-primary">1100 EGP</p>
+              <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- كرري باقي المنتجات -->
+    </div>
+  </div>
+</section>
+
+<!-- Shirts Section -->
+<section id="shirts" class="py-5">
+    <div class="container">
+      <h2 class="section-title shirt-title">👕 T-Shirt</h2>
+
+      <div class="row g-4">
+
+        <div class="col-md-3">
+          <div class="card product-card">
+            <img src="c (1).jpg" class="card-img-top" alt="T-shirt 1">
+            <div class="card-body text-center">
+              <h5>T-shirt </h5>
+              <p class="fw-bold text-primary">300 EGP</p>
+              <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card product-card">
+            <img src="c (2).jpg" class="card-img-top" alt="T-shirt 2">
+            <div class="card-body text-center">
+              <h5>T-shirt </h5>
+              <p class="fw-bold text-primary">400 EGP</p>
+              <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card product-card">
+            <img src="c (3).jpg" class="card-img-top" alt="T-shirt 3">
+            <div class="card-body text-center">
+              <h5>T-shirt </h5>
+              <p class="fw-bold text-primary">450 EGP</p>
+              <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card product-card">
+            <img src="c (4).jpg" class="card-img-top" alt="T-shirt 4">
+            <div class="card-body text-center">
+              <h5> شميز كاروهات</h5>
+              <p class="fw-bold text-primary">500 EGP</p>
+              <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card product-card">
+            <img src="c (5).jpg" class="card-img-top" alt="T-shirt 5">
+            <div class="card-body text-center">
+              <h5>بلوزه بيضاء</h5>
+              <p class="fw-bold text-primary">550 EGP</p>
+              <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card product-card">
+            <img src="c (6).jpg" class="card-img-top" alt="T-shirt 6">
+            <div class="card-body text-center">
+              <h5>شميز pink</h5>
+              <p class="fw-bold text-primary">600 EGP</p>
+              <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- Sports Section -->
+<section id="sports" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title sports-title">🏋️ sports wear</h2>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="card product-card" style="max-width: 350px;">
+          <img src="Tech%20Sport%20Wrap%20-%20Rose.jpg" class="card-img-top" alt="ملابس رياضية">
+          <div class="card-body text-center">
+            <h5>تيشيرت رياضي</h5>
+            <p class="fw-bold text-primary">250 EGP</p>
+            <button class="btn btn-outline-success" onclick="window.location.href='checkout.html'">أضف إلى السلة</button> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="19.jpg" class="card-img-top img-fluid" alt="T-shirt" />
+          <div class="card-body">
+            <h5 class="card-title">جsport T-shirt</h5>
+            <p class="text-muted"> ابيض</p>
+            <p class="fw-bold text-primary">399 EGP</p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="20.jpg" class="card-img-top img-fluid" alt="T-shirt" />
+          <div class="card-body">
+            <h5 class="card-title">sport T-shirt</h5>
+            <p class="text-muted"> ابيض</p>
+            <p class="fw-bold text-primary">399 EGP</p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="22.jpg" class="card-img-top img-fluid" alt="T-shirt" />
+          <div class="card-body">
+            <h5 class="card-title">sportswear</h5>
+            <p class="text-muted"> اسود </p>
+            <p class="fw-bold text-primary">1699 EGP</p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="offers" class="py-5 bg-light text-center">
+  <div class="container">
+    <h1 class="fw-bold mb-4">offers✨</h1>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="download%20(28).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">5 basics</p>
+            <p class="fw-bold text-primary">2000 EGP
+              <small class="text-decoration-line-through text-muted">3500 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="c%20(8).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">4 basics</p>
+            <p class="fw-bold text-primary">3999 EGP
+              <small class="text-decoration-line-through text-muted">5200 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="download%20(30).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">6 basics</p>
+            <p class="fw-bold text-primary">3300 EGP
+              <small class="text-decoration-line-through text-muted">5500 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="c%20(7).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">6 basics</p>
+            <p class="fw-bold text-primary">4100 EGP
+              <small class="text-decoration-line-through text-muted">5500 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="download%20(31).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">6 basics</p>
+            <p class="fw-bold text-primary">3500 EGP
+              <small class="text-decoration-line-through text-muted">6000 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="download%20(24).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">3 basics</p>
+            <p class="fw-bold text-primary">2999 EGP
+              <small class="text-decoration-line-through text-muted">3200 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card shadow-sm">
+          <img src="download%20(32).jpg" class="card-img-top img-fluid" alt="حجاب" />
+          <div class="card-body">
+            <h5 class="card-title">Out fIT </h5>
+            <p class="text-muted">6 basics</p>
+            <p class="fw-bold text-primary">3999 EGP
+              <small class="text-decoration-line-through text-muted">4700 EGP</small>
+            </p>
+            <a href="checkout.html" class="btn btn-outline-success">أضف إلى السلة</a> <!-- NEW -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="py-4 bg-dark text-white text-center">
+  <p>© 2025 VESTA - جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>
